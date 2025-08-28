@@ -1,0 +1,201 @@
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-14 18:09+0200\n"
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: .\main\templates\main\contacts.html:5
+msgid "Контакты | TouchCraft"
+msgstr "Контакты | TouchCraft"
+
+#: .\main\templates\main\contacts.html:11
+msgid "Свяжитесь с нами"
+msgstr "Свяжитесь с нами"
+
+#: .\main\templates\main\contacts.html:12
+msgid ""
+"Мы всегда открыты для новых проектов и идей. Выберите удобный способ связи, "
+"и мы ответим вам в ближайшее время."
+msgstr ""
+"Мы всегда открыты для новых проектов и идей. Выберите удобный способ связи, "
+"и мы ответим вам в ближайшее время."
+
+#: .\main\templates\main\contacts.html:20
+msgid "Telegram"
+msgstr "Telegram"
+
+#: .\main\templates\main\contacts.html:21
+msgid "Напишите нам в Telegram для быстрого ответа."
+msgstr "Напишите нам в Telegram для быстрого ответа."
+
+#: .\main\templates\main\contacts.html:22
+msgid "Написать в Telegram"
+msgstr "Написать в Telegram"
+
+#: .\main\templates\main\contacts.html:32
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: .\main\templates\main\contacts.html:33
+msgid "Подпишитесь на нашу страницу и следите за обновлениями."
+msgstr "Подпишитесь на нашу страницу и следите за обновлениями."
+
+#: .\main\templates\main\contacts.html:34
+msgid "Наш LinkedIn"
+msgstr "Наш LinkedIn"
+
+#: .\main\templates\main\contacts.html:44
+msgid "Почта"
+msgstr "Почта"
+
+#: .\main\templates\main\contacts.html:45
+msgid "Отправьте нам подробное письмо с описанием вашего проекта."
+msgstr "Отправьте нам подробное письмо с описанием вашего проекта."
+
+#: .\main\templates\main\contacts.html:46
+msgid "Написать на почту"
+msgstr "Написать на почту"
+
+#: .\main\templates\main\home.html:6
+msgid "Главная | TouchCraft"
+msgstr "Главная | TouchCraft"
+
+#: .\main\templates\main\home.html:12
+msgid "Добро пожаловать в TouchCraft"
+msgstr "Добро пожаловать в TouchCraft"
+
+#: .\main\templates\main\home.html:13
+msgid "Современный UX/UI-дизайн и разработка цифровых продуктов"
+msgstr "Современный UX/UI-дизайн и разработка цифровых продуктов"
+
+#: .\main\templates\main\home.html:14
+msgid "Наши услуги"
+msgstr "Наши услуги"
+
+#: .\main\templates\main\home.html:20
+msgid "Наши последние работы"
+msgstr "Наши последние работы"
+
+#: .\main\templates\main\home.html:28
+msgid "Пока нет проектов для отображения."
+msgstr "Пока нет проектов для отображения."
+
+#: .\main\templates\main\home.html:36 .\main\templates\main\services.html:10
+msgid "Что мы предлагаем"
+msgstr "Что мы предлагаем"
+
+#: .\main\templates\main\home.html:49
+msgid "Пока нет доступных сервисов."
+msgstr "Пока нет доступных сервисов."
+
+#: .\main\templates\main\home.html:58 .\main\templates\main\services.html:35
+msgid "Готовы к следующему шагу?"
+msgstr "Готовы к следующему шагу?"
+
+#: .\main\templates\main\home.html:59 .\main\templates\main\services.html:36
+msgid "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь."
+msgstr "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь."
+
+#: .\main\templates\main\home.html:60 .\main\templates\main\services.html:37
+msgid "Связаться с нами"
+msgstr "Связаться с нами"
+
+#: .\main\templates\main\portfolio.html:5
+msgid "Портфолио | TouchCraft"
+msgstr "Портфолио | TouchCraft"
+
+#: .\main\templates\main\portfolio.html:15
+msgid "Наши проекты"
+msgstr "Наши проекты"
+
+#: .\main\templates\main\portfolio.html:17
+msgid ""
+"Примеры наших работ в UX/UI дизайне, мобильной и веб-разработке, а также AI-"
+"интеграции."
+msgstr ""
+"Примеры наших работ в UX/UI дизайне, мобильной и веб-разработке, а также AI-"
+"интеграции."
+
+#: .\main\templates\main\portfolio.html:30
+msgid "Подробнее"
+msgstr "Подробнее"
+
+#: .\main\templates\main\portfolio.html:36
+msgid "На данный момент проектов нет."
+msgstr "На данный момент проектов нет."
+
+#: .\main\templates\main\portfolio.html:43
+msgid "Игры"
+msgstr "Игры"
+
+#: .\main\templates\main\portfolio.html:44
+msgid "Подборка наших игровых проектов."
+msgstr "Пока нет доступных сервисов."
+
+#: .\main\templates\main\portfolio.html:54
+msgid "GitHub"
+msgstr "GitHub"
+
+#: .\main\templates\main\portfolio.html:65
+msgid "Все проекты"
+msgstr "Все проекты"
+
+#: .\main\templates\main\portfolio.html:67
+msgid "Скрыть"
+msgstr "Скрыть"
+
+#: .\main\templates\main\services.html:5
+msgid "Услуги | TouchCraft"
+msgstr "Услуги | TouchCraft"
+
+#: .\main\templates\main\services.html:12
+msgid ""
+"Наша команда специализируется на создании инновационных и функциональных "
+"цифровых продуктов. Мы объединяем креативный дизайн и передовые технологии, "
+"чтобы предоставить лучшие решения."
+msgstr ""
+"Наша команда специализируется на создании инновационных и функциональных "
+"цифровых продуктов. Мы объединяем креативный дизайн и передовые технологии, "
+"чтобы предоставить лучшие решения."
+
+#: .\main\templates\main\services.html:27
+msgid "Пока нет доступных услуг."
+msgstr "Пока нет доступных услуг."
+
+#: .\touchcraft\templates\touchcraft\base.html:148
+msgid "TouchCraft"
+msgstr "TouchCraft"
+
+#: .\touchcraft\templates\touchcraft\base.html:150
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: .\touchcraft\templates\touchcraft\base.html:157
+msgid "Home"
+msgstr "Главная"
+
+#: .\touchcraft\templates\touchcraft\base.html:160
+msgid "Services"
+msgstr "Сервисы"
+
+#: .\touchcraft\templates\touchcraft\base.html:163
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: .\touchcraft\templates\touchcraft\base.html:166
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\touchcraft\templates\touchcraft\base.html:174
+msgid "Language"
+msgstr "Русский"
+
+#: .\touchcraft\templates\touchcraft\base.html:241
+msgid "TouchCraft. All rights reserved."
+msgstr "TouchCraft. Все права защищены."
+
+#: .\touchcraft\templates\touchcraft\base.html:242
+msgid "UX/UI Design | Mobile and Web Interfaces | AI Integration"
+msgstr "UX/UI дизайн | Мобильные и веб-интерфейсы | Интеграция ИИ"

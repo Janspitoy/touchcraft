@@ -1,0 +1,74 @@
+{% extends "touchcraft/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Портфолио | TouchCraft" %}{% endblock %}
+
+{% block content %}
+<style>
+  /* your existing styles */
+</style>
+
+<section id="portfolio-page" class="py-5">
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <div class="portfolio-main">
+            <h2 class="section-title">{% trans "Наши проекты" %}</h2>
+            <p class="lead mb-4">
+                {% trans "Примеры наших работ в UX/UI дизайне, мобильной и веб-разработке, а также AI-интеграции." %}
+            </p>
+
+            <div class="portfolio-grid">
+                <div class="row g-4">
+                    {% for project in projects %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-lg">
+                            <img src="{{ project.image.url }}" class="card-img-top portfolio-img" alt="{{ project.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">{{ project.title }}</h5>
+                                <p class="card-text">{{ project.description|safe }}</p>
+                                {% if project.link %}
+                                <a href="{{ project.link }}" class="btn btn-primary" target="_blank">{% trans "Подробнее" %}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>{% trans "На данный момент проектов нет." %}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% if games %}
+            <hr class="my-5">
+            <h2 class="section-title">{% trans "Игры" %}</h2>
+            <p class="lead mb-4">{% trans "Подборка наших игровых проектов." %}</p>
+            <div class="row g-4">
+                {% for game in games %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <img src="{{ game.image.url }}" class="card-img-top portfolio-img" alt="{{ game.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">{{ game.title }}</h5>
+                            <p class="card-text">{{ game.description|safe }}</p>
+                            {% if game.link %}
+                            <a href="{{ game.link }}" class="btn btn-primary" target="_blank">{% trans "GitHub" %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="portfolio-cta mt-5">
+                {% if not show_all %}
+                    <a href="?all=1" class="btn btn-primary btn-lg">{% trans "Все проекты" %}</a>
+                {% else %}
+                    <a href="?all=0" class="btn btn-secondary btn-lg">{% trans "Скрыть" %}</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

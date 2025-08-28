@@ -1,0 +1,53 @@
+{% extends "touchcraft/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Контакты | TouchCraft" %}{% endblock %}
+
+{% block content %}
+<!-- Contact Section -->
+<section id="contact-info" class="py-5">
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <h2 class="section-title">{% trans "Свяжитесь с нами" %}</h2>
+        <p class="lead mb-5">{% trans "Мы всегда открыты для новых проектов и идей. Выберите удобный способ связи, и мы ответим вам в ближайшее время." %}</p>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Telegram -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <i class="fab fa-telegram-plane fa-3x mb-3 text-primary"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">{% trans "Telegram" %}</h5>
+                        <p class="card-text">{% trans "Напишите нам в Telegram для быстрого ответа." %}</p>
+                        <a href="https://t.me/JanSpit0y" class="btn btn-primary mt-3" target="_blank">{% trans "Написать в Telegram" %}</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <i class="fab fa-linkedin-in fa-3x mb-3 text-primary"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">{% trans "LinkedIn" %}</h5>
+                        <p class="card-text">{% trans "Подпишитесь на нашу страницу и следите за обновлениями." %}</p>
+                        <a href="https://www.linkedin.com/in/ivan-kliuchyshche-426528246/" class="btn btn-primary mt-3" target="_blank">{% trans "Наш LinkedIn" %}</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">{% trans "Почта" %}</h5>
+                        <p class="card-text">{% trans "Отправьте нам подробное письмо с описанием вашего проекта." %}</p>
+                        <a href="mailto:ivan.kliuchyshche@litepix.es" class="btn btn-primary mt-3">{% trans "Написать на почту" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

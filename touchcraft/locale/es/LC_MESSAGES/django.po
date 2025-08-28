@@ -1,0 +1,203 @@
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-14 18:09+0200\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: .\main\templates\main\contacts.html:5
+msgid "Контакты | TouchCraft"
+msgstr "Contactos | TouchCraft"
+
+#: .\main\templates\main\contacts.html:11
+msgid "Свяжитесь с нами"
+msgstr "Contáctenos"
+
+#: .\main\templates\main\contacts.html:12
+msgid ""
+"Мы всегда открыты для новых проектов и идей. Выберите удобный способ связи, "
+"и мы ответим вам в ближайшее время."
+msgstr ""
+"Siempre estamos abiertos a nuevos proyectos e ideas. Elija la forma de "
+"contacto que le resulte más conveniente y le responderemos lo antes posible."
+
+#: .\main\templates\main\contacts.html:20
+msgid "Telegram"
+msgstr "Telegram"
+
+#: .\main\templates\main\contacts.html:21
+msgid "Напишите нам в Telegram для быстрого ответа."
+msgstr "Escríbenos en Telegram para una respuesta rápida."
+
+#: .\main\templates\main\contacts.html:22
+msgid "Написать в Telegram"
+msgstr "Escribir en Telegram"
+
+#: .\main\templates\main\contacts.html:32
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: .\main\templates\main\contacts.html:33
+msgid "Подпишитесь на нашу страницу и следите за обновлениями."
+msgstr "Siga nuestra página y manténgase al día."
+
+#: .\main\templates\main\contacts.html:34
+msgid "Наш LinkedIn"
+msgstr "Nuestro LinkedIn"
+
+#: .\main\templates\main\contacts.html:44
+msgid "Почта"
+msgstr "Correo electrónico"
+
+#: .\main\templates\main\contacts.html:45
+msgid "Отправьте нам подробное письмо с описанием вашего проекта."
+msgstr "Envíenos un correo detallado con la descripción de su proyecto."
+
+#: .\main\templates\main\contacts.html:46
+msgid "Написать на почту"
+msgstr "Enviar un correo electrónico"
+
+#: .\main\templates\main\home.html:6
+msgid "Главная | TouchCraft"
+msgstr "Inicio | TouchCraft"
+
+#: .\main\templates\main\home.html:12
+msgid "Добро пожаловать в TouchCraft"
+msgstr "Bienvenido a TouchCraft"
+
+#: .\main\templates\main\home.html:13
+msgid "Современный UX/UI-дизайн и разработка цифровых продуктов"
+msgstr "Diseño UX/UI moderno y desarrollo de productos digitales"
+
+#: .\main\templates\main\home.html:14
+msgid "Наши услуги"
+msgstr "Nuestros servicios"
+
+#: .\main\templates\main\home.html:20
+msgid "Наши последние работы"
+msgstr "Nuestros últimos trabajos"
+
+#: .\main\templates\main\home.html:28
+msgid "Пока нет проектов для отображения."
+msgstr "No hay proyectos para mostrar por el momento."
+
+#: .\main\templates\main\home.html:36 .\main\templates\main\services.html:10
+msgid "Что мы предлагаем"
+msgstr "Lo que ofrecemos"
+
+#: .\main\templates\main\home.html:49
+msgid "Пока нет доступных сервисов."
+msgstr "No hay servicios disponibles por el momento."
+
+#: .\main\templates\main\home.html:58 .\main\templates\main\services.html:35
+msgid "Готовы к следующему шагу?"
+msgstr "¿Listo para el siguiente paso?"
+
+#: .\main\templates\main\home.html:59 .\main\templates\main\services.html:36
+msgid "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь."
+msgstr ""
+"Póngase en contacto con nuestro equipo: lo ayudaremos a hacer realidad su "
+"proyecto."
+
+#: .\main\templates\main\home.html:60 .\main\templates\main\services.html:37
+msgid "Связаться с нами"
+msgstr "Ponerse en contacto"
+
+#: .\main\templates\main\portfolio.html:5
+msgid "Портфолио | TouchCraft"
+msgstr "Portfolio | TouchCraft"
+
+#: .\main\templates\main\portfolio.html:15
+msgid "Наши проекты"
+msgstr "Nuestros proyectos"
+
+#: .\main\templates\main\portfolio.html:17
+msgid ""
+"Примеры наших работ в UX/UI дизайне, мобильной и веб-разработке, а также AI-"
+"интеграции."
+msgstr ""
+"Ejemplos de nuestro trabajo en diseño UX/UI, desarrollo móvil y web, así "
+"como integración de IA."
+
+#: .\main\templates\main\portfolio.html:30
+msgid "Подробнее"
+msgstr "Leer más"
+
+#: .\main\templates\main\portfolio.html:36
+msgid "На данный момент проектов нет."
+msgstr "No hay proyectos por el momento."
+
+#: .\main\templates\main\portfolio.html:43
+msgid "Игры"
+msgstr "Juegos"
+
+#: .\main\templates\main\portfolio.html:44
+msgid "Подборка наших игровых проектов."
+msgstr "Selección de nuestros proyectos de juegos"
+
+#: .\main\templates\main\portfolio.html:54
+msgid "GitHub"
+msgstr "GitHub"
+
+#: .\main\templates\main\portfolio.html:65
+msgid "Все проекты"
+msgstr "Todos los proyectos"
+
+#: .\main\templates\main\portfolio.html:67
+msgid "Скрыть"
+msgstr "Esconder"
+
+#: .\main\templates\main\services.html:5
+msgid "Услуги | TouchCraft"
+msgstr "Servicios | TouchCraft"
+
+#: .\main\templates\main\services.html:12
+msgid ""
+"Наша команда специализируется на создании инновационных и функциональных "
+"цифровых продуктов. Мы объединяем креативный дизайн и передовые технологии, "
+"чтобы предоставить лучшие решения."
+msgstr ""
+"Nuestro equipo se especializa en crear productos digitales innovadores y "
+"funcionales. Combinamos un diseño creativo con tecnología de vanguardia para "
+"ofrecer las mejores soluciones."
+
+#: .\main\templates\main\services.html:27
+msgid "Пока нет доступных услуг."
+msgstr "No hay servicios disponibles en este momento."
+
+#: .\touchcraft\templates\touchcraft\base.html:148
+msgid "TouchCraft"
+msgstr ""
+
+#: .\touchcraft\templates\touchcraft\base.html:150
+msgid "Toggle navigation"
+msgstr ""
+
+#: .\touchcraft\templates\touchcraft\base.html:157
+msgid "Home"
+msgstr "Inicio"
+
+#: .\touchcraft\templates\touchcraft\base.html:160
+msgid "Services"
+msgstr "Servicios"
+
+#: .\touchcraft\templates\touchcraft\base.html:163
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: .\touchcraft\templates\touchcraft\base.html:166
+msgid "Contacts"
+msgstr "Contactos"
+
+#: .\touchcraft\templates\touchcraft\base.html:174
+msgid "Language"
+msgstr "Español"
+
+#: .\touchcraft\templates\touchcraft\base.html:241
+msgid "TouchCraft. All rights reserved."
+msgstr "TouchCraft. Todos derechos reservados"
+
+#: .\touchcraft\templates\touchcraft\base.html:242
+msgid "UX/UI Design | Mobile and Web Interfaces | AI Integration"
+msgstr "Diseño UX/UI | Interfaces móviles y web | Integración de IA"

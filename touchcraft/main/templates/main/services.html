@@ -1,0 +1,40 @@
+{% extends "touchcraft/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Услуги | TouchCraft" %}{% endblock %}
+
+{% block content %}
+<section id="services" class="py-5">
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <h2 class="section-title">{% trans "Что мы предлагаем" %}</h2>
+        <p class="lead mb-5">
+            {% trans "Наша команда специализируется на создании инновационных и функциональных цифровых продуктов. Мы объединяем креативный дизайн и передовые технологии, чтобы предоставить лучшие решения." %}
+        </p>
+
+        <div class="row g-4 justify-content-center">
+            {% for service in services %}
+            <div class="col-md-4">
+                <div class="card p-4 h-100">
+                    <i class="{{ service.icon }} fa-3x mb-3 text-primary"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.title }}</h5>
+                        <p class="card-text">{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>{% trans "Пока нет доступных услуг." %}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5 bg-dark">
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <h2 class="mb-4">{% trans "Готовы к следующему шагу?" %}</h2>
+        <p class="lead mb-4">{% trans "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь." %}</p>
+        <a href="/contacts/" class="btn btn-outline-primary btn-lg mt-3">{% trans "Связаться с нами" %}</a>
+    </div>
+</section>
+{% endblock %}
