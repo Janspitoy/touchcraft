@@ -5,10 +5,6 @@
 {% block title %}{% trans "Портфолио | TouchCraft" %}{% endblock %}
 
 {% block content %}
-<style>
-  /* your existing styles */
-</style>
-
 <section id="portfolio-page" class="py-5">
     <div class="container text-center animate__animated animate__fadeInUp">
         <div class="portfolio-main">
@@ -21,13 +17,13 @@
                 <div class="row g-4">
                     {% for project in projects %}
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 border-0 shadow-lg">
+                        <div class="card h-100">
                             <img src="{{ project.image.url }}" class="card-img-top portfolio-img" alt="{{ project.title }}">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title text-primary">{{ project.title }}</h5>
                                 <p class="card-text">{{ project.description|safe }}</p>
                                 {% if project.link %}
-                                <a href="{{ project.link }}" class="btn btn-primary" target="_blank">{% trans "Подробнее" %}</a>
+                                <a href="{{ project.link }}" class="btn btn-primary mt-auto" target="_blank">{% trans "Подробнее" %}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -45,13 +41,13 @@
             <div class="row g-4">
                 {% for game in games %}
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-lg">
+                    <div class="card h-100">
                         <img src="{{ game.image.url }}" class="card-img-top portfolio-img" alt="{{ game.title }}">
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-success">{{ game.title }}</h5>
                             <p class="card-text">{{ game.description|safe }}</p>
                             {% if game.link %}
-                            <a href="{{ game.link }}" class="btn btn-primary" target="_blank">{% trans "GitHub" %}</a>
+                            <a href="{{ game.link }}" class="btn btn-primary mt-auto" target="_blank">{% trans "GitHub" %}</a>
                             {% endif %}
                         </div>
                     </div>

@@ -5,59 +5,552 @@
 
 {% block title %}{% trans "Главная | TouchCraft" %}{% endblock %}
 
+{% block extra_css %}
+<style>
+
+    .hero {
+        background-image: url("{% static 'images/tc_background.png' %}");
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        color: #ffffff;
+        padding: clamp(100px, 20vw, 200px) 20px clamp(80px, 15vw, 120px);
+        min-height: clamp(500px, 70vh, 900px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        height: 900px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.2); /* мягкий тёмный фильтр */
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 6vw, 4rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: clamp(1rem, 3vw, 1.5rem);
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero .lead {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ========================================
+       ПРОБЛЕМА СЕКЦИЯ
+    ======================================== */
+    .problem-section {
+        background: linear-gradient(135deg, #1a202c, #0d1117);
+        position: relative;
+    }
+
+    .problem-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 70% 50%, rgba(255, 106, 106, 0.1), transparent 50%);
+        pointer-events: none;
+    }
+
+    .problem-card {
+        background: rgba(255, 106, 106, 0.1);
+        border: 1px solid rgba(255, 106, 106, 0.3);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        transition: all 0.3s ease;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 106, 106, 0.2);
+    }
+
+    .problem-card i {
+        color: #ff6a6a;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .problem-section .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .problem-section .col-md-4 {
+        display: flex;
+    }
+
+    .problem-card {
+        flex: 1; /* чтобы карточка растягивалась по высоте */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* ========================================
+       РЕШЕНИЕ СЕКЦИЯ
+    ======================================== */
+    .solution-section {
+        background: linear-gradient(135deg, #0d1117, #1f2838);
+        position: relative;
+    }
+
+    .solution-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(0, 198, 255, 0.1), transparent 50%);
+        pointer-events: none;
+    }
+
+    .solution-card {
+        background: rgba(0, 198, 255, 0.05);
+        border: 1px solid rgba(0, 198, 255, 0.2);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 4vw, 2rem);
+        height: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .solution-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 198, 255, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 198, 255, 0.2);
+    }
+
+    .solution-card i {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* ========================================
+       ПОРТФОЛИО СЕКЦИЯ
+    ======================================== */
+    .portfolio-section {
+        background-color: rgba(248, 249, 250, 0.03);
+    }
+
+    .portfolio-card {
+        background-color: var(--bs-dark);
+        border: 1px solid rgba(45, 55, 72, 0.8);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 198, 255, 0.2);
+        border-color: rgba(0, 198, 255, 0.5);
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .portfolio-card .card-body {
+        padding: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    /* ========================================
+       О НАС СЕКЦИЯ
+    ======================================== */
+    .about-section {
+      background: linear-gradient(135deg, #1f2838, #0d1117);
+      position: relative;
+      padding: clamp(80px, 10vw, 120px) 0;
+    }
+
+    .about-section .section-title {
+      font-weight: 800;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .about-section .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--color-primary, #3B82F6);
+      margin-top: 10px;
+    }
+
+    .about-section p.lead {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .about-section p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1rem;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: clamp(1rem, 3vw, 2rem);
+      margin-top: clamp(1.5rem, 4vw, 2rem);
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 198, 255, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 198, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 198, 255, 0.5);
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.15);
+    }
+
+    .stat-item h3 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--color-primary, #3B82F6);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      font-size: clamp(0.875rem, 2vw, 1rem);
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    .about-photo {
+      position: relative;
+      display: inline-block;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+    }
+
+    .about-img {
+      width: 100%;
+      max-width: 85%;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      object-fit: cover;
+      transition: all 0.6s ease;
+      transform-origin: center center;
+    }
+
+    /* Более мягкий эффект при наведении */
+    .about-photo:hover .about-img {
+      filter: blur(0.5px) brightness(0.8);
+      transform: scale(1.015);
+    }
+
+
+    /* Иконка Instagram — без подложки */
+    .insta-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c3cee0;
+      font-size: 60px;
+      opacity: 0;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    .about-photo:hover .insta-link {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .insta-link:hover {
+      color: #ffffff;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* ========================================
+       КОНТАКТ СЕКЦИЯ
+    ======================================== */
+    .contact-cta {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        color: white;
+        text-align: center;
+    }
+
+    .contact-cta h2 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    .contact-cta .lead {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        opacity: 0.95;
+    }
+
+    .contact-cta .btn {
+        background: white;
+        color: #0072ff;
+        font-weight: 700;
+        border: none;
+    }
+
+    .contact-cta .btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ========================================
+       АДАПТИВНОСТЬ
+    ======================================== */
+    @media (max-width: 991px) {
+        .hero {
+            padding-top: 0rem;
+            max-height: 300px;
+        }
+        .hero h1 {
+            font-size: clamp(1.5rem, 6vw, 4rem);
+        }
+
+        .hero .lead {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+        }
+
+        .about-photo {
+          margin-top: 2rem;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+        .about-stats {
+            flex-direction: column;
+        }
+
+        .stat-item {
+            min-width: 100%;
+        }
+
+        .problem-card,
+        .solution-card {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-stats {
+            flex-direction: column;
+        }
+
+        .stat-item {
+            min-width: 100%;
+        }
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+
 <!-- Hero Section -->
-<section class="hero text-center animate__animated animate__fadeIn">
-    <div class="container">
-        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">{% trans "Добро пожаловать в TouchCraft" %}</h1>
-        <p class="lead mt-3 animate__animated animate__fadeInUp">{% trans "Современный UX/UI-дизайн и разработка цифровых продуктов" %}</p>
-        <a href="#services" class="btn btn-primary btn-lg mt-4 animate__animated animate__zoomIn">{% trans "Наши услуги" %}</a>
-    </div>
-</section>
-
-<!-- Mockup Showcase -->
-<section id="portfolio" class="container text-center my-5">
-    <h2 class="section-title animate__animated animate__fadeInUp">{% trans "Наши последние работы" %}</h2>
-    <div class="row g-4">
-        {% for project in projects %}
-            <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-{{ forloop.counter }}s">
-                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="mockup-img">
-                <p class="mt-2">{{ project.title }}</p>
-            </div>
-        {% empty %}
-            <p>{% trans "Пока нет проектов для отображения." %}</p>
-        {% endfor %}
-    </div>
-</section>
-
-<!-- Services Section -->
-<section id="services" class="py-5">
+<section class="hero animate__animated animate__fadeIn">
     <div class="container text-center">
-        <h2 class="section-title animate__animated animate__fadeInUp">{% trans "Что мы предлагаем" %}</h2>
+        <h1 class="animate__animated animate__fadeInDown">{% trans "TouchCraft: Дизайн и Разработка" %}</h1>
+        <p class="lead animate__animated animate__fadeInUp">{% trans "Создаём современные сайты для бизнеса от идеи до запуска. UX/UI, интеграция ИИ, оптимизация и поддержка." %}</p>
+        <a href="#solution" class="btn btn-primary btn-lg mt-4 animate__animated animate__zoomIn">{% trans "Узнать больше" %}</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+    <div class="container text-center">
+        <h2 class="section-title">{% trans "С какими проблемами сталкиваетесь?" %}</h2>
+        <p class="lead mb-5">{% trans "Многие компании и стартапы сталкиваются с этими вызовами в цифровой среде" %}</p>
+
         <div class="row g-4">
-            {% for service in services %}
-                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-{{ forloop.counter }}s">
-                    <div class="card p-4 h-100">
-                        <i class="{{ service.icon }} fa-3x mb-3 text-primary"></i>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ service.title }}</h5>
-                            <p class="card-text">{{ service.description }}</p>
-                        </div>
-                    </div>
+            <div class="col-md-4">
+                <div class="problem-card">
+                    <i class="fas fa-user-times fa-3x"></i>
+                    <h5 class="mt-3">{% trans "Низкая вовлеченность" %}</h5>
+                    <p>{% trans "Пользователи покидают сайт или приложение из-за сложного интерфейса и плохого UX" %}</p>
                 </div>
-            {% empty %}
-                <p>{% trans "Пока нет доступных сервисов." %}</p>
-            {% endfor %}
+            </div>
+            <div class="col-md-4">
+                <div class="problem-card">
+                    <i class="fas fa-clock fa-3x"></i>
+                    <h5 class="mt-3">{% trans "Долгая разработка" %}</h5>
+                    <p>{% trans "Запуск продукта затягивается из-за отсутствия четкого видения и технических проблем" %}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="problem-card">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h5 class="mt-3">{% trans "Слабая конверсия" %}</h5>
+                    <p>{% trans "Дизайн не приводит к желаемым действиям пользователей и росту бизнеса" %}</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section id="contact" class="py-5 bg-dark">
-    <div class="container text-center animate__animated animate__fadeInUp">
-        <h2 class="mb-4">{% trans "Готовы к следующему шагу?" %}</h2>
-        <p class="lead mb-4">{% trans "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь." %}</p>
-        <a href="contacts/" class="btn btn-outline-primary btn-lg mt-3">{% trans "Связаться с нами" %}</a>
+<!-- Solution Section -->
+<section id="solution" class="solution-section">
+    <div class="container text-center">
+        <h2 class="section-title">{% trans "Наши решения" %}</h2>
+        <p class="lead mb-5">{% trans "Мы создаем цифровые продукты, которые работают на ваш бизнес" %}</p>
+
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-4">
+                <div class="solution-card">
+                    <i class="{{ service.icon }} fa-3x mb-3"></i>
+                    <h5>{{ service.title }}</h5>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p>{% trans "Пока нет доступных услуг." %}</p>
+            {% endfor %}
+        </div>
+
+        <a href="/services/" class="btn btn-outline-primary btn-lg mt-5">{% trans "Все услуги" %}</a>
     </div>
 </section>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section">
+    <div class="container text-center">
+        <h2 class="section-title">{% trans "Наши последние работы" %}</h2>
+        <p class="lead mb-5">{% trans "Примеры проектов, которые мы реализовали для наших клиентов" %}</p>
+
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-lg-6 col-md-6">
+                <a href="{{ project.link|default:'#' }}" class="text-decoration-none d-block h-100" target="_blank" rel="noopener noreferrer">
+                    <div class="portfolio-card">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="portfolio-img">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description|truncatewords:15 }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <p>{% trans "Пока нет доступных проектов." %}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if projects %}
+        <a href="/portfolio/" class="btn btn-primary btn-lg mt-5">{% trans "Все проекты" %}</a>
+        {% endif %}
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <h2 class="section-title text-start">{% trans "О нас" %}</h2>
+        <p class="lead">
+          {% trans "Я — Иван Ключище, основатель TouchCraft. Разрабатываю современные сайты и интерфейсы, которые помогают бизнесу выделяться и расти." %}
+        </p>
+        <p class="lead">
+          {% trans "TouchCraft — это не просто студия, а мой личный проект, где каждая деталь важна. Я создаю понятные и визуально чистые решения, которые делают цифровой опыт клиентов проще и приятнее." %}
+        </p>
+        <p class="lead">
+          {% trans "Специализируюсь на UX/UI дизайне и веб-разработке, а также внедряю технологии искусственного интеллекта, чтобы делать сайты ещё умнее и эффективнее." %}
+        </p>
+
+        <div class="about-stats mt-4">
+          <div class="stat-item">
+            <h3>20+</h3>
+            <p>{% trans "Проектов" %}</p>
+          </div>
+          <div class="stat-item">
+            <h3>4+</h3>
+            <p>{% trans "Лет опыта" %}</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>{% trans "Качество" %}</p>
+          </div>
+        </div>
+
+        <a href="/contacts/" class="btn btn-outline-primary btn-lg mt-4">{% trans "Обсудить проект" %}</a>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <div class="about-photo position-relative">
+          <img src="{% static 'images/ivan.jpg' %}" alt="{% trans 'Иван Ключище — основатель TouchCraft' %}" class="img-fluid about-img">
+          <a href="https://www.instagram.com/jan_spit0y/" target="_blank" rel="noopener" class="insta-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact CTA Section -->
+<section class="contact-cta">
+    <div class="container">
+        <h2>{% trans "Готовы к следующему шагу?" %}</h2>
+        <p class="lead">{% trans "Свяжитесь с нашей командой — мы поможем воплотить ваш проект в жизнь" %}</p>
+        <a href="/contacts/" class="btn btn-lg">{% trans "Связаться с нами" %}</a>
+    </div>
+</section>
+
 {% endblock %}

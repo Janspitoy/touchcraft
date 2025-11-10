@@ -6,8 +6,8 @@ from django.db.models import Q
 
 def home(request):
     """Главная страница"""
-    services = Service.objects.all()
-    projects = Project.objects.all()[:3]  # можно Meta.ordering использовать
+    services = Service.objects.all()[:3]
+    projects = Project.objects.all()[:4]  # можно Meta.ordering использовать
     return render(request, 'main/home.html', {
         'services': services,
         'projects': projects,
@@ -63,3 +63,9 @@ def app_ads_txt(request):
         "google.com, pub-4411114348896099, DIRECT, f08c47fec0942fa0",
         content_type="text/plain"
     )
+
+def privacy_policy_view(request):
+    """
+    Отображает страницу политики конфиденциальности.
+    """
+    return render(request, 'touchcraft/privacity.html')
